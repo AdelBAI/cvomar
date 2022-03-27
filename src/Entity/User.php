@@ -70,6 +70,11 @@ class User
      */
     private $degree;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $photo;
+
     public function __construct()
     {
         $this->Experiences = new ArrayCollection();
@@ -214,6 +219,18 @@ class User
     public function setDegree(string $degree): self
     {
         $this->degree = $degree;
+
+        return $this;
+    }
+
+    public function getPhoto(): ?string
+    {
+        return $this->photo;
+    }
+
+    public function setPhoto(?string $photo): self
+    {
+        $this->photo = $photo;
 
         return $this;
     }
